@@ -1,1 +1,23 @@
-T
+Date startDate = ...;                // time from which certificate is valid
+Date expiryDate = ...;               // time after which certificate is not valid
+BigInteger serialNumber = ...;       // serial number for certificate
+PrivateKey caKey = ...;              // private key of the certifying authority (ca) certificate
+X509Certificate caCert = ...;        // public key certificate of the certifying authority
+KeyPair keyPair = ...;               // public/private key pair that we are creating certificate for
+X509V3CertificateGenerator certGen = new X509V3CertificateGenerator();
+X500Principal              subjectName = new X500Principal("CN=Test V3 Certificate");
+ 
+certGen.setSerialNumber(serialNumber);
+certGen.setIssuerDN(caCert.getSubjectX500Principal());
+certGen.setNotBefore(startDate);
+certGen.setNotAfter(expiryDate);
+certGen.setSubjectDN(subjectName);
+certGen.setPublicKey(keyPair.getPublic());
+certGen.setSignatureAlgorithm(signatureAlgorithm);
+ 
+certGen.addExtension(X509Extensions.AuthorityKeyIdentifier, false,
+                        new AuthorityKeyIdentifierStructure(caCert));
+certGen.addExtension(X509Extensions.SubjectKeyIdentifier, false,
+                        new SubjectKeyIdentifierStructure(keyPair.getPublic());
+ 
+X509Certificate cert = certGen.generate(caKey, "BC");   // note: private key of CA
