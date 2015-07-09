@@ -26,3 +26,5 @@ X509Certificate cert = certGen.generate(caKey, "BC");   // note: private key of 
 
 http://www.air-watch.com/pricing/
 http://community.spiceworks.com/topic/171483-mobile-device-management-product-comparisons
+
+http://stackoverflow.com/questions/11149118/a-dns-server-for-my-vpn-to-solve-network-names-only
