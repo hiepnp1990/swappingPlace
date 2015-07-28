@@ -28,3 +28,8 @@ http://www.air-watch.com/pricing/
 http://community.spiceworks.com/topic/171483-mobile-device-management-product-comparisons
 
 http://stackoverflow.com/questions/11149118/a-dns-server-for-my-vpn-to-solve-network-names-only
+
+CVE-2015-1538, CVE-2015-1539, CVE-2015-3824, CVE-2015-3826, CVE-2015-3827, CVE-2015-3828, CVE-2015-3829
+http://blog.zimperium.com/experts-found-a-unicorn-in-the-heart-of-android/
+https://quandarypeak.com/2013/08/androids-stagefright-media-player-architecture/
+https://github.com/CyanogenMod/android_frameworks_av/commits/cm-12.1?author=jduck
