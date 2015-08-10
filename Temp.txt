@@ -33,3 +33,14 @@ CVE-2015-1538, CVE-2015-1539, CVE-2015-3824, CVE-2015-3826, CVE-2015-3827, CVE-2
 http://blog.zimperium.com/experts-found-a-unicorn-in-the-heart-of-android/
 https://quandarypeak.com/2013/08/androids-stagefright-media-player-architecture/
 https://github.com/CyanogenMod/android_frameworks_av/commits/cm-12.1?author=jduck
+
+
+import json
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, ObjectId):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
+JSONEncoder().encode(analytics)
