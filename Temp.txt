@@ -94,6 +94,12 @@ app.directive('customValidation', function(){
    };
 });
 
-
+1. Gen Keystore:
 keytool -genkeypair -keyalg RSA -keysize 3072 -dname "cn=assylias, o=assylias.Inc, c=FR" -alias test -keypass keypass -storepass storepass -validity 36500 -keystore C:\temp\keystore.test
+
+2. Gen Cert:
+keytool -export -alias test -keystore C:\temp\keystore.test -rfc -file C:\temp\test.cer
+
+3. Add cert to TrustStore:
+keytool -import -alias test -file C:\temp\test.cer -keystore C:\temp\truststore.test
 
