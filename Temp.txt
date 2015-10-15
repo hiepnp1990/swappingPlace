@@ -93,3 +93,7 @@ app.directive('customValidation', function(){
      }
    };
 });
+
+
+keytool -genkeypair -keyalg RSA -keysize 3072 -dname "cn=assylias, o=assylias.Inc, c=FR" -alias test -keypass keypass -storepass storepass -validity 36500 -keystore C:\temp\keystore.test
+
