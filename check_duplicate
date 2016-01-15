@@ -1,0 +1,8 @@
+import axmlparserpy.apk as apk
+import os
+import shutil
+
+for f1 in os.listdir(r"C:\Users\root\Desktop\New folder\sony\sms"):
+	for f2 in os.listdir(r"C:\Users\root\Desktop\New folder\apks\sms"):
+		if f1 == f2:
+			print f1
